@@ -4,12 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hanish Dhanwalkar | GenAI & NLP Engineer</title>
-    
-    <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --bg-color: #ffffff;
@@ -25,11 +24,7 @@
             --max-width: 900px;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -39,210 +34,95 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 
-        /* Header / Navigation */
-        header {
-            padding: 32px 0 16px;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 48px;
-        }
+        header { padding: 32px 0 16px; border-bottom: 1px solid var(--border-color); margin-bottom: 48px; }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 700; font-size: 1.25rem; color: var(--text-main); text-decoration: none; letter-spacing: -0.02em; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; margin-left: 24px; font-weight: 500; transition: color 0.2s ease; }
+        .nav-links a:hover { color: var(--accent-blue); }
 
-        .nav-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .hero { padding-bottom: 48px; border-bottom: 1px solid var(--border-color); margin-bottom: 48px; }
+        .hero h1 { font-family: 'Merriweather', Georgia, serif; font-size: 2.75rem; font-weight: 700; color: #111827; letter-spacing: -0.02em; margin-bottom: 12px; }
+        .hero .subtitle { font-size: 1.25rem; color: var(--text-muted); font-weight: 400; margin-bottom: 28px; }
 
-        .logo {
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--text-main);
-            text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            margin-left: 24px;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-blue);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding-bottom: 48px;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 48px;
-        }
-
-        .hero h1 {
-            font-family: 'Merriweather', Georgia, serif;
-            font-size: 2.75rem;
-            font-weight: 700;
-            color: #111827;
-            letter-spacing: -0.02em;
-            margin-bottom: 12px;
-        }
-
-        .hero .subtitle {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            font-weight: 400;
-            margin-bottom: 28px;
-        }
-
-        /* Big Action Button */
         .ctl-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background-color: var(--accent-blue);
-            color: #ffffff;
-            font-size: 1.05rem;
-            font-weight: 600;
-            padding: 14px 28px;
-            border-radius: 6px;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(15, 98, 254, 0.2);
-            transition: all 0.2s ease;
-            margin-bottom: 32px;
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            background-color: var(--accent-blue); color: #fff;
+            font-size: 1.05rem; font-weight: 600; padding: 14px 28px; border-radius: 6px;
+            border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(15, 98, 254, 0.2);
+            transition: all 0.2s ease; margin-bottom: 32px; position: relative; z-index: 10;
+        }
+        .ctl-button:hover { background-color: var(--accent-blue-hover); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(15, 98, 254, 0.3); }
+
+        .hero-bio { font-size: 1.05rem; color: var(--text-muted); max-width: 780px; }
+        .contact-links { display: flex; gap: 16px; margin-top: 20px; flex-wrap: wrap; }
+        .contact-links a { color: var(--accent-blue); text-decoration: none; font-size: 0.95rem; font-weight: 500; }
+        .contact-links a:hover { text-decoration: underline; }
+
+        section { margin-bottom: 56px; }
+        section h2 { font-family: 'Merriweather', Georgia, serif; font-size: 1.6rem; font-weight: 700; color: #111827; margin-bottom: 24px; padding-bottom: 8px; border-bottom: 2px solid #111827; display: inline-block; }
+
+        .item-card { margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid var(--border-color); }
+        .item-card:last-child { border-bottom: none; }
+        .item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 6px; }
+        .item-title { font-size: 1.15rem; font-weight: 600; color: #111827; }
+        .item-meta { font-size: 0.9rem; color: var(--text-light); font-weight: 500; }
+        .item-subtitle { font-size: 1rem; font-weight: 500; color: var(--accent-blue); margin-bottom: 10px; }
+        .item-description { font-size: 0.98rem; color: var(--text-muted); }
+        .item-description ul { padding-left: 20px; margin-top: 8px; }
+        .item-description li { margin-bottom: 6px; }
+        .tag-list { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+        .tag { background-color: var(--tag-bg); color: var(--tag-color); font-size: 0.8rem; font-weight: 500; padding: 4px 10px; border-radius: 4px; }
+
+        /* ---------- Pointer effect ---------- */
+        .pointer-fx { pointer-events: none; position: fixed; z-index: 2147483000; }
+
+        /* Dimmed spotlight around the real widget */
+        #spotlight {
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        #spotlight.active { opacity: 1; }
+
+        /* Pulsing sonar rings on the widget */
+        .ring {
+            border-radius: 50%;
+            border: 3px solid #0f62fe;
+            opacity: 0;
+        }
+        .ring.active { animation: sonar 1.4s ease-out infinite; }
+        .ring.r2.active { animation-delay: 0.45s; }
+        .ring.r3.active { animation-delay: 0.9s; }
+        @keyframes sonar {
+            0%   { transform: scale(0.8); opacity: 0.9; }
+            100% { transform: scale(2.1); opacity: 0; }
         }
 
-        .ctl-button:hover {
-            background-color: var(--accent-blue-hover);
-            transform: translateY(-1px);
-            box-shadow: 0 6px 16px rgba(15, 98, 254, 0.3);
+        /* Hand-drawn arrow */
+        #arrow-overlay { inset: 0; width: 100vw; height: 100vh; overflow: visible; opacity: 0; transition: opacity 0.3s ease; }
+        #arrow-overlay.active { opacity: 1; }
+        .arrow-stroke {
+            fill: none; stroke: #0f62fe; stroke-width: 4.5; stroke-linecap: round; stroke-linejoin: round;
+            filter: drop-shadow(0 3px 6px rgba(15, 98, 254, 0.35));
         }
+        #curve-path { transition: stroke-dashoffset 1s cubic-bezier(.6,.05,.25,1); }
+        #arrow-head { opacity: 0; transition: opacity 0.15s ease; }
+        #arrow-head.show { opacity: 1; animation: nudge 0.7s ease-in-out infinite alternate; }
+        @keyframes nudge { from { transform: translate(var(--hx), var(--hy)) rotate(var(--ha)) translateX(0); } to { transform: translate(var(--hx), var(--hy)) rotate(var(--ha)) translateX(7px); } }
 
-        .hero-bio {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            max-width: 780px;
+        /* Speech bubble */
+        #pointer-label {
+            background: #0f62fe; color: #fff; font-weight: 600; font-size: 0.95rem;
+            padding: 8px 14px; border-radius: 14px 14px 4px 14px;
+            box-shadow: 0 6px 18px rgba(15, 98, 254, 0.35);
+            white-space: nowrap; opacity: 0; transform: translateY(8px) scale(0.9);
+            transition: opacity 0.3s ease 0.9s, transform 0.4s cubic-bezier(.3,1.6,.5,1) 0.9s;
         }
+        #pointer-label.active { opacity: 1; transform: translateY(0) scale(1); }
 
-        .contact-links {
-            display: flex;
-            gap: 16px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .contact-links a {
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        .contact-links a:hover {
-            text-decoration: underline;
-        }
-
-        /* Section Styling */
-        section {
-            margin-bottom: 56px;
-        }
-
-        section h2 {
-            font-family: 'Merriweather', Georgia, serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 24px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #111827;
-            display: inline-block;
-        }
-
-        .item-card {
-            margin-bottom: 28px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .item-card:last-child {
-            border-bottom: none;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            margin-bottom: 6px;
-        }
-
-        .item-title {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: #111827;
-        }
-
-        .item-meta {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            font-weight: 500;
-        }
-
-        .item-subtitle {
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--accent-blue);
-            margin-bottom: 10px;
-        }
-
-        .item-description {
-            font-size: 0.98rem;
-            color: var(--text-muted);
-        }
-
-        .item-description ul {
-            padding-left: 20px;
-            margin-top: 8px;
-        }
-
-        .item-description li {
-            margin-bottom: 6px;
-        }
-
-        .tag-list {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-top: 12px;
-        }
-
-        .tag {
-            background-color: var(--tag-bg);
-            color: var(--tag-color);
-            font-size: 0.8rem;
-            font-weight: 500;
-            padding: 4px 10px;
-            border-radius: 4px;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 32px 0 48px;
-            color: var(--text-light);
-            font-size: 0.9rem;
-            text-align: center;
-        }
+        footer { border-top: 1px solid var(--border-color); padding: 32px 0 48px; color: var(--text-light); font-size: 0.9rem; text-align: center; }
 
         @media (max-width: 640px) {
             .hero h1 { font-size: 2.1rem; }
@@ -268,14 +148,12 @@
     </header>
 
     <main class="container">
-        
-        <!-- Hero Section -->
+
         <section class="hero" id="about">
             <h1>Hi, I am Hanish</h1>
             <div class="subtitle">GenAI & NLP Software Engineer | IIT Bombay Alumnus</div>
-            
-            <!-- Direct CTA to open LiveKit Agent widget -->
-            <button class="ctl-button" id="talk-btn">
+
+            <button class="ctl-button" id="hero-talk-btn">
                 Talk to Hanish's AI Bot 🎙️
             </button>
 
@@ -292,7 +170,6 @@
             </div>
         </section>
 
-        <!-- Professional Experience Section -->
         <section id="experience">
             <h2>Professional Experience</h2>
 
@@ -361,7 +238,6 @@
             </div>
         </section>
 
-        <!-- Patents Section -->
         <section id="patent">
             <h2>Patents & Intellectual Property</h2>
             <div class="item-card">
@@ -375,7 +251,6 @@
             </div>
         </section>
 
-        <!-- Research Experience Section -->
         <section id="research">
             <h2>Research Experience</h2>
 
@@ -422,7 +297,6 @@
             </div>
         </section>
 
-        <!-- Education Section -->
         <section id="education">
             <h2>Education & Achievements</h2>
             <div class="item-card">
@@ -447,34 +321,187 @@
         </div>
     </footer>
 
-    <!-- LiveKit Embed Popup Script & Widget Container -->
-    <script 
-        src="https://cloud.livekit.io/embed-popup.js" 
+    <!-- Pointer effect layers (all ignored when hunting for the widget) -->
+    <div id="spotlight" class="pointer-fx"></div>
+    <div class="ring r1 pointer-fx"></div>
+    <div class="ring r2 pointer-fx"></div>
+    <div class="ring r3 pointer-fx"></div>
+    <svg id="arrow-overlay" class="pointer-fx">
+        <path id="curve-path" class="arrow-stroke" />
+        <path id="arrow-head" class="arrow-stroke" d="M -18 -11 L 0 0 L -18 11" />
+    </svg>
+    <div id="pointer-label" class="pointer-fx">Psst… I'm over here! 👋</div>
+
+    <!-- LiveKit Embed Script -->
+    <script
+        src="https://cloud.livekit.io/embed-popup.js"
         data-lk-agent="CA_KEJ3pzuwt6dJ"
         data-lk-color="#002CF2">
     </script>
 
     <script>
-        // Programmatically trigger the LiveKit popup when clicking your custom button
-        document.getElementById('talk-btn').addEventListener('click', function() {
-            // LiveKit injects a floating toggle button or iframe; find and click it
-            const lkTrigger = document.querySelector('lk-chat-widget') || 
-                              document.querySelector('iframe') || 
-                              document.querySelector('[id*="livekit"]');
-            
-            if (lkTrigger && typeof lkTrigger.click === 'function') {
-                lkTrigger.click();
-            } else {
-                // Fallback: search all shadow roots or click bottom-right floating button injected by script
-                const floatingBtn = document.querySelector('button[class*="livekit"]') || 
-                                    document.body.lastElementChild;
-                if (floatingBtn) {
-                    floatingBtn.click();
-                } else {
-                    alert("Widget is loading or blocked. Check your LiveKit Cloud Allowed Origins settings.");
+        (function () {
+            const heroBtn   = document.getElementById('hero-talk-btn');
+            const overlay   = document.getElementById('arrow-overlay');
+            const curve     = document.getElementById('curve-path');
+            const head      = document.getElementById('arrow-head');
+            const label     = document.getElementById('pointer-label');
+            const spotlight = document.getElementById('spotlight');
+            const rings     = Array.from(document.querySelectorAll('.ring'));
+
+            let active = false, hideTimer, headTimer;
+
+            /* ---- 1. Find the REAL LiveKit launcher ---------------------------------
+               The embed injects a fixed-position element (often with a shadow root) in
+               the bottom-right corner. Rather than guessing coordinates, we scan for
+               small fixed elements in that corner and take the best match.            */
+            function findWidgetRect() {
+                const known = document.querySelector(
+                    'livekit-widget, [data-lk-widget], #livekit-widget, [class*="livekit"], [id*="livekit"]'
+                );
+                const candidates = [];
+                const consider = (el) => {
+                    if (!el || el.closest('.pointer-fx') || el === heroBtn) return;
+                    const r = el.getBoundingClientRect();
+                    if (r.width < 24 || r.height < 24) return;
+                    if (r.width > 220 || r.height > 220) return;            // ignore opened panels
+                    if (r.left < innerWidth * 0.5 || r.top < innerHeight * 0.4) return;
+                    if (r.right > innerWidth + 2 || r.bottom > innerHeight + 2) return;
+                    candidates.push(r);
+                };
+
+                if (known) {
+                    const r = known.getBoundingClientRect();
+                    if (r.width >= 24 && r.height >= 24) return r;
+                    // host may be 0-sized; look inside its shadow root / children
+                    const root = known.shadowRoot || known;
+                    root.querySelectorAll('*').forEach(consider);
                 }
+
+                document.querySelectorAll('body *').forEach((el) => {
+                    if (el.closest('.pointer-fx')) return;
+                    if (getComputedStyle(el).position === 'fixed') consider(el);
+                    if (el.shadowRoot) {
+                        el.shadowRoot.querySelectorAll('*').forEach((c) => {
+                            if (getComputedStyle(c).position === 'fixed') consider(c);
+                        });
+                    }
+                });
+
+                if (candidates.length) {
+                    // the launcher is the one closest to the bottom-right corner
+                    candidates.sort((a, b) =>
+                        Math.hypot(innerWidth - a.right, innerHeight - a.bottom) -
+                        Math.hypot(innerWidth - b.right, innerHeight - b.bottom));
+                    return candidates[0];
+                }
+
+                // Fallback: where LiveKit's launcher normally sits
+                return { left: innerWidth - 80, top: innerHeight - 80, width: 56, height: 56,
+                         right: innerWidth - 24, bottom: innerHeight - 24 };
             }
-        });
+
+            /* ---- 2. Build geometry --------------------------------------------------- */
+            function layout(animate) {
+                const b = heroBtn.getBoundingClientRect();
+                const t = findWidgetRect();
+
+                const S = { x: b.left + b.width / 2, y: b.bottom + 6 };           // start: under button
+                const T = { x: t.left + t.width / 2, y: t.top + t.height / 2 };   // widget centre
+                const radius = Math.max(t.width, t.height) / 2;
+
+                // End the arrow just outside the widget, on the side facing the button
+                const ang = Math.atan2(S.y - T.y, S.x - T.x);
+                const gap = radius + 16;
+                const E = { x: T.x + Math.cos(ang) * gap, y: T.y + Math.sin(ang) * gap };
+
+                const dx = E.x - S.x, dy = E.y - S.y;
+                const c1 = { x: S.x - 70,           y: S.y + dy * 0.55 };
+                const c2 = { x: E.x - dx * 0.25,    y: E.y - Math.max(60, dy * 0.3) };
+
+                curve.setAttribute('d', `M ${S.x} ${S.y} C ${c1.x} ${c1.y}, ${c2.x} ${c2.y}, ${E.x} ${E.y}`);
+
+                // Arrowhead along the curve's final tangent
+                const tang = Math.atan2(E.y - c2.y, E.x - c2.x) * 180 / Math.PI;
+                head.style.setProperty('--hx', E.x + 'px');
+                head.style.setProperty('--hy', E.y + 'px');
+                head.style.setProperty('--ha', tang + 'deg');
+                head.style.transform = `translate(${E.x}px, ${E.y}px) rotate(${tang}deg)`;
+
+                // Draw-on animation: dash length is the real path length (not a magic 1000)
+                const len = curve.getTotalLength();
+                curve.style.strokeDasharray = len;
+                if (animate) {
+                    curve.style.transition = 'none';
+                    curve.style.strokeDashoffset = len;
+                    void curve.getBoundingClientRect();
+                    curve.style.transition = '';
+                    requestAnimationFrame(() => { curve.style.strokeDashoffset = 0; });
+                } else {
+                    curve.style.transition = 'none';
+                    curve.style.strokeDashoffset = 0;
+                }
+
+                // Sonar rings centred on the widget
+                const size = Math.max(t.width, t.height) + 10;
+                rings.forEach((r) => {
+                    r.style.width = r.style.height = size + 'px';
+                    r.style.left = (T.x - size / 2) + 'px';
+                    r.style.top  = (T.y - size / 2) + 'px';
+                });
+
+                // Spotlight: dim everything except a soft hole over the widget
+                spotlight.style.background =
+                    `radial-gradient(circle at ${T.x}px ${T.y}px, rgba(0,0,0,0) ${radius + 20}px, rgba(10,20,50,0.45) ${radius + 140}px)`;
+
+                // Label sits to the left of / above the widget, kept on-screen
+                const lw = label.offsetWidth || 190;
+                let lx = Math.min(T.x - lw - radius - 10, innerWidth - lw - 12);
+                let ly = T.y - radius - 62;
+                if (lx < 12) lx = 12;
+                if (ly < 12) ly = T.y + radius + 18;
+                label.style.left = lx + 'px';
+                label.style.top  = ly + 'px';
+            }
+
+            /* ---- 3. Show / hide ------------------------------------------------------ */
+            function show() {
+                active = true;
+                clearTimeout(hideTimer); clearTimeout(headTimer);
+
+                // reset
+                [overlay, label, spotlight, ...rings].forEach((e) => e.classList.remove('active'));
+                head.classList.remove('show');
+                void overlay.offsetWidth;
+
+                layout(true);
+
+                overlay.classList.add('active');
+                spotlight.classList.add('active');
+                label.classList.add('active');
+                rings.forEach((r) => r.classList.add('active'));
+                headTimer = setTimeout(() => head.classList.add('show'), 950);
+
+                hideTimer = setTimeout(hide, 5000);
+            }
+
+            function hide() {
+                active = false;
+                clearTimeout(hideTimer); clearTimeout(headTimer);
+                [overlay, label, spotlight, ...rings].forEach((e) => e.classList.remove('active'));
+                head.classList.remove('show');
+            }
+
+            heroBtn.addEventListener('click', (e) => { e.stopPropagation(); show(); });
+
+            // Keep the arrow glued to both ends while the page scrolls / resizes
+            const reflow = () => { if (active) layout(false); };
+            addEventListener('scroll', reflow, { passive: true });
+            addEventListener('resize', reflow);
+
+            // Dismiss as soon as the visitor clicks the real widget (or anywhere else)
+            document.addEventListener('click', () => { if (active) hide(); });
+        })();
     </script>
 </body>
 </html>
