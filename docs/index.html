@@ -10,13 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
     
-    <!-- LiveKit Embed Popup Script -->
-    <script 
-        src="https://cloud.livekit.io/embed-popup.js" 
-        data-lk-agent="CA_KEJ3pzuwt6dJ"
-        data-lk-color="#002CF2">
-    </script>
-
     <style>
         :root {
             --bg-color: #ffffff;
@@ -281,8 +274,8 @@
             <h1>Hi, I am Hanish</h1>
             <div class="subtitle">GenAI & NLP Software Engineer | IIT Bombay Alumnus</div>
             
-            <!-- Direct CTA to open LiveKit Agent -->
-            <button class="ctl-button" onclick="triggerLiveKit()">
+            <!-- Direct CTA to open LiveKit Agent widget -->
+            <button class="ctl-button" id="talk-btn">
                 Talk to Hanish's AI Bot 🎙️
             </button>
 
@@ -454,20 +447,34 @@
         </div>
     </footer>
 
+    <!-- LiveKit Embed Popup Script & Widget Container -->
+    <script 
+        src="https://cloud.livekit.io/embed-popup.js" 
+        data-lk-agent="CA_KEJ3pzuwt6dJ"
+        data-lk-color="#002CF2">
+    </script>
+
     <script>
-        // Trigger LiveKit widget pop-up when clicking hero button
-        function triggerLiveKit() {
-            // Target injected LiveKit floating widget or trigger click
-            const lkWidget = document.querySelector('lk-chat-widget') || 
-                             document.querySelector('[data-lk-agent]') || 
-                             document.querySelector('iframe');
+        // Programmatically trigger the LiveKit popup when clicking your custom button
+        document.getElementById('talk-btn').addEventListener('click', function() {
+            // LiveKit injects a floating toggle button or iframe; find and click it
+            const lkTrigger = document.querySelector('lk-chat-widget') || 
+                              document.querySelector('iframe') || 
+                              document.querySelector('[id*="livekit"]');
             
-            if (lkWidget) {
-                lkWidget.click();
+            if (lkTrigger && typeof lkTrigger.click === 'function') {
+                lkTrigger.click();
             } else {
-                alert("Please click the floating microphone button in the bottom right corner to start talking!");
+                // Fallback: search all shadow roots or click bottom-right floating button injected by script
+                const floatingBtn = document.querySelector('button[class*="livekit"]') || 
+                                    document.body.lastElementChild;
+                if (floatingBtn) {
+                    floatingBtn.click();
+                } else {
+                    alert("Widget is loading or blocked. Check your LiveKit Cloud Allowed Origins settings.");
+                }
             }
-        }
+        });
     </script>
 </body>
 </html>
